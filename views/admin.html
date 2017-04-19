@@ -1,0 +1,28 @@
+
+<!-- <div ui-view="register"> -->
+	 <div class="bar bar-header icon-left bar-stable">
+  <button class="button icon ion-chevron-left" ng-click="back()"></button>
+  <h1 class="title">账户登录</h1>
+</div>
+	<ion-content class="has-header">
+			<div class="admin_image"><img src="./images/1.png" alt=""></div>
+			<form name="myform">
+			  
+				<label class="item item-input ">
+					<span class="input-label">用户名</span>
+					<input type="text" placeholder="用户名" ng-model="userdata.username">
+					</label>
+				<label class="item item-input ">
+				<span class="input-label">密码</span>
+				<input type="password" placeholder="password" ng-model="userdata.pwd">
+				</label>
+			<button class="button button-block button-positive" ng-click="getuser()">
+	 			 登录
+			</button>
+		</form>
+		<div class="row">
+			<div class="col-20" ng-click="register()" ><p>免费注册</p></div>
+			<div class="col-20 admin_left" ng-click="goforget()"><p>忘记密码</p></div>
+		</div>
+	</ion-content>
+<!-- </div> -->

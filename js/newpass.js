@@ -1,0 +1,23 @@
+angular.module("newpassModule",[])
+		.controller("newpassCtrl",function($scope,$stateParams,getuser,reviceUrl,$ionicPopup,$state){
+			console.log($stateParams.user_name);
+			$scope.userdata={};
+			$scope.mydata={};
+			$scope.getuser=function(){
+				$scope.mydata.user_name=$stateParams.user_name;
+				$scope.mydata.user_id=$stateParams.user_id;
+				$scope.mydata.user_password=angular.copy($scope.userdata.pwd);
+				getuser.get(reviceUrl+"?get=newpass",$scope.mydata,function(res){
+					if(res.data.code==1){
+						$ionicPopup.alert({title:res.data.data})
+						$state.go("admin")
+					}else{
+						$ionicPopup.alert({title:res.data.data})
+					}
+					
+				})
+			}
+			$scope.back=function(){
+				$state.go("admin")
+			}
+		})

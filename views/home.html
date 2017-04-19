@@ -1,0 +1,90 @@
+	
+	 	<ion class="header">
+			
+			<a href="#" class="goon"><i class="icon"  ui-sref="{{url}}" style="overflow:hidden;font-size:14px" >{{admin}}</i></a>
+			<h1 class="tit">天猫书城</h1>
+		</ion>
+		<ion-content class="has-header content-header has-tabs" overflow-scroll="false"> 
+		<!-- 下拉刷新 -->
+			<ion-refresher pulling-text="刷新..." refreshing-text="" on-refresh="refreshData()">
+		</ion-refresher> 
+
+		
+
+		<ion-slide-box>
+		  <ion-slide>
+		    <div class="box"><img src="./images/1.jpg" alt=""></div>
+		  </ion-slide>
+		  <ion-slide>
+		    <div class="box"><img src="./images/2.jpg" alt=""></div>
+		  </ion-slide>
+		  <ion-slide >
+		    <div class="box"><img src="./images/3.jpg" alt=""></div>
+		  </ion-slide>
+		   <ion-slide >
+		    <div class="box"><img src="./images/4.jpg" alt=""></div>
+		  </ion-slide>
+		   <ion-slide>
+		    <div class="box" ><img src="./images/5.jpg" alt=""></div>
+		  </ion-slide>
+		</ion-slide-box>
+		<!-- 热推		 -->
+		<div class="good">
+			<div class="good-left">
+			<a href="#">
+				<div class="good-top">
+					<h6>畅销月榜</h6>
+					<p>天猫好书精选</p>
+				</div>
+				<img src="./images/6.jpg" alt="">
+			</a></div>
+			<div class="good-right">
+				
+				<div>
+					<a href="#">
+						<div class="good-top">
+							<h6>最新出版</h6>
+							<p>新品抢先看</p>
+						</div>
+						<img src="./images/7.jpg" alt="">
+					</a>
+				</div>
+				<div>
+					<a href="#">
+						<div class="good-top">
+							<h6>主体活动专区</h6>
+							<p>更多促销活动</p>
+
+						</div>
+						
+						<img src="./images/8.jpg" alt="">
+					</a>
+				</div>
+			
+			</div>
+		</div>
+		<!-- 排行 -->
+		<div class="my-rank">
+			<div class="rank-header">
+				<h2>近七日畅销榜</h2>
+				<h3>天猫好书 畅销排行</h3>
+			</div>
+			<ul class="row">
+				<!-- <span class="span-move"></span> -->
+				<li class="col" ng-class="{dang:getdemo(0)}" ui-sref="admin.myhome.skill" ng-click="demo(0)"> <a >技术</a></li>
+				<li  class="col" ng-class="{dang:getdemo(1)}" ui-sref="admin.myhome.animal" ng-click="demo(1)"><a href="#">动漫</a></li>
+				<li  class="col" ng-class="{dang:getdemo(2)}" ui-sref="admin.myhome.article" ng-click="demo(2)"><a>文学</a></li>
+				<li  class="col" ng-class="{dang:getdemo(3)}" ui-sref="admin.myhome.life"><a ng-click="demo(3)">生活</a></li>
+			</ul>	
+			<div class="list" ui-view="class">
+				
+			</div>
+				
+			<div class="list"  ui-view="animal"></div>
+			<div class="list"  ui-view="article"></div>
+			<div class="list"  ui-view="life"></div>
+			</div>
+		
+	
+			
+	</ion-content>

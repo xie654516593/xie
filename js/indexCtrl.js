@@ -1,0 +1,2 @@
+angular.module("myApp",["ionic","homeModule","sevice","skillModule","articleModule","animalModule","lifeModule","newpageModule","adminModule","registerModule","myindexModule","shopcarModule","aboutMeModule","myGoodsInfoModule","myClassModule","reviseMoudle","commentModule","newComModule","forgetModule","newpassModule"])
+			

@@ -1,0 +1,13 @@
+<h4>技巧</h4>
+<ion-list ng-repeat="book in skill_book"  ng-click="getItem(book.id)">
+	<ion-item class="item-thumbnail-left">
+		<img ng-src="/Admin/{{book.images[0].image_name}}" alt="">
+			<div class="book_div">【包邮】{{book.title}}</div>
+			<p>作者：{{book.author}}</p>
+			<p class="book_price">{{book.price | currency : "&yen;"}} <button class="button button-small button-assertive button button-outline my_book_button">了解详情</button></p>
+	</ion-item>
+</ion-list>
+<!--上拉加载-->
+	<ion-infinite-scroll on-infinite="loadMore()" immediate-check="false"  distance="1%" class="scroll_buttom">
+						
+	</ion-infinite-scroll>	

@@ -1,0 +1,97 @@
+
+	
+<ion-header-bar align-title="center">	
+		<h1 class="title">用户注册</h1>
+</ion-header-bar>
+<ion-content class="has-header">
+		<div class="admin_image"><img src="./images/1.png" alt=""></div>
+		<form name="myForm">
+		<div style="background-color:#F0F0F0" style="my_register" class="my_register">
+		<div class="row">
+			<div class="col-70">
+				<label class="item item-input " >
+					<span class="input-label">用户</span>
+					<input type="text" placeholder="用户" 
+					ng-model="userdata.username"
+					name="usernameEle" 
+                    id="usernameInput"
+                    autocomplete="off"
+                    ng-pattern="/^\w{4,12}$/"
+                    ng-required="true"
+					>
+				</label>
+			</div>
+			<div class="col-25"> <p class="text-danger" ng-if="myForm.usernameEle.$touched && myForm.usernameEle.$invalid">用户名不可用</p>
+			<p class="text-success" ng-if="myForm.usernameEle.$touched && myForm.usernameEle.$valid">用户名可用</p>
+			</div>
+		</div>	
+		<div class="row">
+			<div class="col-70">
+				
+				<label class="item item-input ">
+				<span class="input-label">密码</span>
+				<input type="password" placeholder="密码" 
+				ng-model="userdata.pwd"
+                id="pwdInput"
+                name="pwdEle"
+                autocomplete="off"        
+                ng-required="true"
+                ng-minlength="6"
+                ng-maxlength="18"
+				>
+		</label>
+			</div>
+			<div class="col-25"> <p class="text-success" ng-if="myForm.pwdEle.$touched && myForm.pwdEle.$valid">密码有效</p>
+
+             <p class="text-danger" ng-if="myForm.pwdEle.$touched && myForm.pwdEle.$error.required">密码不能为空</p></div>
+		</div>	
+
+		<div class="row">
+			<div class="col-70">
+				
+				<label class="item item-input ">
+				<span class="input-label">密码</span>
+				<input type="password" placeholder="重复密码" 
+				type="password" 
+                name="repwdEle" 
+                id="repwdInput"
+                ng-model="userdata.repwd"
+				>
+		</label>
+			</div>
+			<div class="col-25">  <p class="text-success" ng-if="myForm.repwdEle.$touched &&  checkPwd()">两次密码一致</p>
+            <p class="text-danger" ng-if="myForm.repwdEle.$touched && !checkPwd()">两次密码不一致</p></div>
+		</div>	
+
+
+		<div class="row">
+			<div class="col-70">
+			
+				<label class="item item-input">
+				<span class="input-label">电话</span>
+				<input type="number" placeholder="电话"  
+                name="phone" 
+                id="repwdInput"
+                ng-pattern="/^1([358][0-9]|4[57]|7[0135678])\d{8}$/"
+                ng-required="true"
+                ng-model="userdata.phone"
+
+				>
+		</label>
+			</div>
+			<div class="col-25">  <p class="text-success" ng-if="myForm.phone.$touched && myForm.phone.$valid">正确</p>
+             <p class="text-danger" ng-if="myForm.phone.$touched && myForm.phone.$error.required">格式错误</p></div>
+		</div>	
+		
+
+		 <div class="row">
+  			<ion-radio ng-model="userdata.choice" ng-value="'m'" class="col-50">男</ion-radio>
+  			<ion-radio ng-model="userdata.choice" ng-value="'w'" class="col-50">女</ion-radio>
+		</div>
+			<button class="button button-block button-positive" ng-disabled="myForm.$invalid || !checkPwd() || checkCho()" ng-click="getuser()">
+	 			 注册
+			</button>
+		</form>
+	</div>
+		
+</ion-content>

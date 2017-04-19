@@ -1,0 +1,38 @@
+<ion-header-bar class="shopcar bar-positive">
+			<div class="row padding_list">
+				<div class="col-10 ion-left" ng-click="back()"><i class="ion-ios-arrow-back ion-large"></i></div>
+				<div class="col-90 ">
+					<h3>购物车</h3>
+				</div>
+			</div>
+			
+</ion-header-bar>
+<ion-content class="has-tabs" >
+	<ion-list ng-repeat="shop in shopCarList">
+	<ion-item class="item-thumbnail-left">
+		
+				<img ng-src="/Admin/{{shop.images}}" alt="">
+				<ion-checkbox ng-model="shop.sale" class="my_ion"></ion-checkbox>
+				<div style="padding:4px">书名：{{shop.title}}</div>
+				
+				<div>
+				<i class="ion-minus-round my_i" ng-click="minusNumber(shop)"></i><span class="my_span" >{{shop.num}}</span><i class="ion-plus-round my_i" ng-click="addNumber(shop)"></i><i class="icon ion-close" style="margin-left:120px;background-color:red;width:25px;height:25px;display:inline-block;text-align:center;border-radius:4px;color:#fff" ng-click="delete(shop.id)"></i>
+				<p class="book_price">合计：{{shop.price* shop.num | currency : "&yen;"}} </p>
+				</div>
+
+		
+	</ion-item>
+</ion-list>
+</ion-content>	
+
+
+<div class="bar bar-tabs padding_list my_shop_footer" id="my_fixed">
+		<div class="row padding_list">
+			<div class="col-75 padding_list">
+				<p class="book_price">合计：{{total | currency : "&yen;"}}</p>
+			</div>
+			<div class="col-25 padding_list">
+				<button class="button button-assertive button-full" style="margin:0;height:44px;" ng-click="goods()">去结算</button>
+			</div>
+		</div>
+	</div>

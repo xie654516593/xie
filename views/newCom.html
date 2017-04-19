@@ -1,0 +1,25 @@
+ <div class="bar bar-header icon-left bar-stable">
+  <button class="button icon ion-chevron-left" ng-click="back()"></button>
+  <h1 class="title">商品评论</h1>
+</div>
+<ion-content class="has-header">
+	<!-- <div class="list list-inset">
+
+    <div class="item">
+      	
+    </div>
+</div> -->
+	<div ng-repeat="item in mydata" class="my_box">
+	<ul class="row">
+		<li class="col-80"><span style="color:#ccc;line-height:30px;font-size:16px">用户：</span><span style="line-height=:30px;font-size:16px">{{item.user_name}}</span></li> 
+		
+	</ul>
+	<ul class="row">
+		<li class="col-80 "><span style="color:#ccc;line-height:30px;font-size:16px">评论：</span><span style="line-height=:30px;font-size:16px" >{{item.comment_content}}</span></li> 
+	</ul>
+	<ul class="row">
+		<li class="col-80 "><span style="color:#ccc;line-height:30px;font-size:16px">评论日期：</span><span style="line-height=:30px;font-size:16px">{{item.comment_addtime}}</span>
+</li> 
+	</ul>
+	</div>
+</ion-content>

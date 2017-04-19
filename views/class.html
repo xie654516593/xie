@@ -1,0 +1,36 @@
+<div class="bar bar-header item-input-inset">
+  <label class="item-input-wrapper">
+    <i class="icon ion-ios-search placeholder-icon"></i>
+    <input type="search" placeholder="Search" ng-model="data.search">
+  </label>
+  <button class="button" ng-click="search()">
+  	<p>搜索</p>
+  </button>
+  
+</div>
+<ion-content class="has-header has-tabs">
+
+	<div class="row" >
+		<div class="col-20 col-offset-5"><button class="button  button-positive button-clear" ng-click="Class(1)">
+  			技术
+		</button></div>
+		<div class="col-20"><button class="button  button-positive button-clear" ng-click="Class(2)">
+  			动漫
+		</button></div>
+		<div class="col-20"><button class="button  button-positive button-clear" ng-click="Class(3)">
+  			文学
+		</button></div>
+		<div class="col-20"><button class="button  button-positive button-clear" ng-click="Class(4)">
+  			生活
+		</button></div>
+	</div>
+	<h2 ng-if="myclass" style="color:red">没有找到</h2>
+	<ion-list ng-repeat="book in class_book" >
+		<ion-item class="item-thumbnail-left">
+			<img ng-src="/Admin/{{book.images[0].image_name}}" alt="">
+				<div class="book_div">【包邮】{{book.title}}</div>
+				<p>作者：{{book.author}}</p>
+				<p class="book_price">{{book.price | currency : "&yen;"}}<button class="button button-small button-assertive button button-outline " style="margin-left:60px" ng-click="addShopcar(book)">直接购买</button> <button class="button button-small button-assertive button button-outline" ng-click="go_newpage(book.id)">了解详情</button></p>
+		</ion-item>
+	</ion-list>
+</ion-content>

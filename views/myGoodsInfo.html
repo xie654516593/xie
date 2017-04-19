@@ -1,0 +1,23 @@
+<div class="bar bar-header icon-left bar-stable">
+  <button class="button icon ion-chevron-left" ng-click="back()"></button>
+  <h1 class="title">我的订单</h1>
+</div>
+<ion-content class="has-header">
+	<div class="list" ng-repeat="goods in myInfo">
+    <div class="col-100 " >
+     <p style="line-height:50px;color:#ccc"><span style="color:#000">购买时间</span>：{{goods[0].order_addtime}}</p> 
+    </div>
+    <a  class="item item-thumbnail-left"  style="background-color:#F8F8F8" >
+      <img ng-src="/Admin/{{goods[0].book_image}}">
+      <p style="margin-left:100px">书名{{goods[0].book_title}}</p>
+      <p style="margin-left:100px">购买数量：{{goods[0].book_num}}</p>
+      <button class="button button-small button-assertive" style="margin-left:100px" ng-click="gocomment(goods[0].book_id)">
+          评论
+      </button>
+    </a>
+   
+
+
+  
+</div>
+<ion-content>
